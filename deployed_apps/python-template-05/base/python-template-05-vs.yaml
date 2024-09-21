@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: python-template-05-gw
+  namespace: python-template-05
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - python-template-05.sevira.cloud
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - python-template-05.sevira.cloud
+      port:
+        name: https-workloads
+        number: 443
+        protocol: HTTP
+      tls:
+        mode: PASSTHROUGH
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: python-template-05-vs
+  namespace: python-template-05
+  labels:
+    app: python-template-05
+    version: 0.0.1
+    backstage.io/kubernetes-id: python-template-05
+spec:
+  gateways:
+  - python-template-05-gw
+  hosts:
+  - python-template-05.sevira.cloud
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: python-template-05-service
+      weight: 100

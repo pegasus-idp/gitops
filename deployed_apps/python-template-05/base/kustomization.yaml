@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: python-template-05
+resources:
+  - namespace.yaml
+  - python-template-05-quota.yaml
+  - python-template-05-deployment.yaml
+  - python-template-05-service.yaml
+  - python-template-05-vs.yaml
+  - python-template-05-hpa.yaml
