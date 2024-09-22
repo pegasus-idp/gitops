@@ -6,10 +6,10 @@ metadata:
 spec:
   forProvider:
     name: go-app-02
-    alias:
-      - name: pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
-      - zoneID: Z02136633A0BUJO7ZT4W7
-      - evaluateTargetHealth: true
+    - alias:
+        name: pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
+        zoneID: Z02136633A0BUJO7ZT4W7
+        evaluateTargetHealth: true
     region: us-east-1
     type: A
   providerConfigRef:
