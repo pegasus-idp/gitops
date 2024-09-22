@@ -9,3 +9,4 @@ resources:
   - go-app-02-service.yaml
   - go-app-02-vs.yaml
   - go-app-02-hpa.yaml
+  - crossplane-rt53.yaml
