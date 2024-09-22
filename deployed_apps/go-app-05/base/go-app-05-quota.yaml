@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: go-app-05-quota
+  namespace: go-app-05
+  labels:
+    kubernetes.io/metadata.name: go-app-05
+    backstage.io/kubernetes-id: go-app-05
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
