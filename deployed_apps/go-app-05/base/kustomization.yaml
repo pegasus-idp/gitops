@@ -1,0 +1,11 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: go-app-05
+resources:
+  - namespace.yaml
+  - go-app-05-quota.yaml
+  - go-app-05-deployment.yaml
+  - go-app-05-service.yaml
+  - go-app-05-vs.yaml
+  - go-app-05-hpa.yaml
