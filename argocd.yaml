@@ -9,6 +9,17 @@ stringData:
   type: git
   url: https://github.com/pegasus-idp/gitops.git
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: crossplane-chart
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: helm
+  url: https://charts.crossplane.io/stable
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
