@@ -1,0 +1,15 @@
+apiVersion: route53.aws.upbound.io/v1beta1
+kind: Record
+metadata:
+  name: go-app-02
+  namespace: go-app-02
+spec:
+  forProvider:
+    name: go-app-02
+    records:
+      - go-app-02.sevira.cloud
+    region: us-east-1
+    ttl: 300
+    type: CNAME
+    zoneIdRef:
+      name: sevira.cloud
