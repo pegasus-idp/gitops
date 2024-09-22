@@ -1,18 +1,18 @@
-apiVersion: route53.aws.upbound.io/v1beta1
-kind: Record
-metadata:
-  name: go-app-02
-  namespace: go-app-02
-spec:
-  forProvider:
-    name: go-app-02
-    alias:
-      - name: pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
-        zoneId: Z02136633A0BUJO7ZT4W7
-        evaluateTargetHealth: true
-    region: us-east-2
-    type: A
-    zoneId: Z02136633A0BUJO7ZT4W7
-  providerConfigRef:
-    name: aws
-    namespace: crossplane-system
+# apiVersion: route53.aws.upbound.io/v1beta1
+# kind: Record
+# metadata:
+#   name: go-app-02
+#   namespace: go-app-02
+# spec:
+#   forProvider:
+#     name: go-app-02
+#     alias:
+#       - name: pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
+#         zoneId: Z02136633A0BUJO7ZT4W7
+#         evaluateTargetHealth: true
+#     region: us-east-2
+#     type: A
+#     zoneId: Z02136633A0BUJO7ZT4W7
+#   providerConfigRef:
+#     name: aws
+#     namespace: crossplane-system
