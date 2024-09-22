@@ -12,3 +12,6 @@ spec:
     ttl: 300
     type: CNAME
     zoneId: Z02136633A0BUJO7ZT4W7
+  providerConfigRef:
+    name: aws
+    namespace: crossplane-system
