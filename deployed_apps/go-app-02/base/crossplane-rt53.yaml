@@ -6,12 +6,11 @@ metadata:
 spec:
   forProvider:
     name: go-app-02
-    records:
-      - pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
+    alias:
+      - name: pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
     region: us-east-1
     type: A
-    zoneId: Z02136633A0BUJO7ZT4W7
-    ttl: 300
+    zoneId: 'Z02136633A0BUJO7ZT4W7'
   providerConfigRef:
     name: aws
     namespace: crossplane-system
