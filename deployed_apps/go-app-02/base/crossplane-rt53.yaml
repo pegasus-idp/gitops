@@ -11,5 +11,4 @@ spec:
     region: us-east-1
     ttl: 300
     type: CNAME
-    zoneIdRef:
-      name: sevira.cloud
+    zoneId: Z02136633A0BUJO7ZT4W7
