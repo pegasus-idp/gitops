@@ -7,7 +7,7 @@ spec:
   forProvider:
     name: go-app-02
     records:
-      - go-app-02.sevira.cloud
+      - pegasus-staging-nlb-ingress-9e99ea4d081b6725.elb.us-east-2.amazonaws.com.
     region: us-east-1
     ttl: 300
     type: CNAME
