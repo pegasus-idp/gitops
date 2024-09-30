@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: go-app-09-gw
+  namespace: go-app-09
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - go-app-09.sevira.cloud
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - go-app-09.sevira.cloud
+      port:
+        name: https-workloads
+        number: 443
+        protocol: HTTP
+      tls:
+        mode: PASSTHROUGH
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: go-app-09-vs
+  namespace: go-app-09
+  labels:
+    app: go-app-09
+    version: 0.0.1
+    backstage.io/kubernetes-id: go-app-09
+spec:
+  gateways:
+  - go-app-09-gw
+  hosts:
+  - go-app-09.sevira.cloud
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: go-app-09-service
+      weight: 100
