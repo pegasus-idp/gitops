@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: go-app-09-hpa
+  namespace: go-app-09
+  labels:
+    app: go-app-09
+    version: 0.0.1
+    backstage.io/kubernetes-id: go-app-09
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: go-app-09
+ minReplicas: 1
+ maxReplicas: 4
+ targetCPUUtilizationPercentage: 75
