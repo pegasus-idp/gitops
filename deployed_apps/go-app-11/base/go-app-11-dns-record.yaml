@@ -1,0 +1,17 @@
+apiVersion: api.pauloponciano.digital/v1alpha1
+kind: CustomRecord
+metadata:
+  name: go-app-11
+  namespace: go-app-11
+  labels:
+    app: go-app-11
+    backstage.io/kubernetes-id: go-app-11
+spec:
+  compositionSelector:
+    matchLabels:
+      service: route53
+      domain: pauloponciano.digital
+  resourceConfig:
+    providerConfigName: aws
+    record: go-app-11
+    region: us-east-2
