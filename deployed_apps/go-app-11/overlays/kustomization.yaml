@@ -5,4 +5,4 @@ resources:
 images:
 - name: webgo
   newName: paulofponciano/go-app-11
-  newTag: latest
+  newTag: 813316af
