@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-app-11-service
+  namespace: go-app-11
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: go-app-11.sevira.cloud
+  labels:
+    app: go-app-11
+    version: 0.0.1
+    backstage.io/kubernetes-id: go-app-11
+spec:
+  type: ClusterIP
+  ports:
+  - name: tcp-node
+    port: 8080
+  selector:
+    app: go-app-11
