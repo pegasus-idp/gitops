@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: product-catalog-quota
+  namespace: product-catalog
+  labels:
+    kubernetes.io/metadata.name: product-catalog
+    backstage.io/kubernetes-id: product-catalog
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
