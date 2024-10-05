@@ -5,4 +5,4 @@ resources:
 images:
 - name: webgo
   newName: paulofponciano/product-catalog
-  newTag: latest
+  newTag: 80078bb2
