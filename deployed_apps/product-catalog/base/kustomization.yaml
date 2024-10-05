@@ -1,0 +1,12 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: product-catalog
+resources:
+  - namespace.yaml
+  - product-catalog-quota.yaml
+  - product-catalog-deployment.yaml
+  - product-catalog-service.yaml
+  - product-catalog-vs.yaml
+  - product-catalog-hpa.yaml
+  - product-catalog-dns-record.yaml
