@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-catalog-service
+  namespace: product-catalog
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: product-catalog.sevira.cloud
+  labels:
+    app: product-catalog
+    version: 0.0.1
+    backstage.io/kubernetes-id: product-catalog
+spec:
+  type: ClusterIP
+  ports:
+  - name: tcp-node
+    port: 8080
+  selector:
+    app: product-catalog
