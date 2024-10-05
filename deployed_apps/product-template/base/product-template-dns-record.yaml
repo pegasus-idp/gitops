@@ -1,0 +1,17 @@
+apiVersion: api.pauloponciano.digital/v1alpha1
+kind: CustomRecord
+metadata:
+  name: product-template
+  namespace: product-template
+  labels:
+    app: product-template
+    backstage.io/kubernetes-id: product-template
+spec:
+  compositionSelector:
+    matchLabels:
+      service: route53
+      domain: pauloponciano.digital
+  resourceConfig:
+    providerConfigName: aws
+    record: product-template
+    region: us-east-2

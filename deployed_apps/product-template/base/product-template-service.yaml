@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-template-service
+  namespace: product-template
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: product-template.sevira.cloud
+  labels:
+    app: product-template
+    version: 0.0.1
+    backstage.io/kubernetes-id: product-template
+spec:
+  type: ClusterIP
+  ports:
+  - name: tcp-node
+    port: 8080
+  selector:
+    app: product-template

@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-template
+  labels:
+    kubernetes.io/metadata.name: product-template
+    backstage.io/kubernetes-id: product-template
+    istio-injection: enabled
+spec:
+  finalizers:
+  - kubernetes
