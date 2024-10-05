@@ -1,0 +1,12 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: product-template
+resources:
+  - namespace.yaml
+  - product-template-quota.yaml
+  - product-template-deployment.yaml
+  - product-template-service.yaml
+  - product-template-vs.yaml
+  - product-template-hpa.yaml
+  - product-template-dns-record.yaml

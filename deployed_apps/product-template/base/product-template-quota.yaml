@@ -1,0 +1,16 @@
+---
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: product-template-quota
+  namespace: product-template
+  labels:
+    kubernetes.io/metadata.name: product-template
+    backstage.io/kubernetes-id: product-template
+    istio-injection: enabled
+spec:
+  hard:
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi

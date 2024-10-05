@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: product-template-gw
+  namespace: product-template
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+        - product-template.sevira.cloud
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - product-template.sevira.cloud
+      port:
+        name: https-workloads
+        number: 443
+        protocol: HTTP
+      tls:
+        mode: PASSTHROUGH
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: product-template-vs
+  namespace: product-template
+  labels:
+    app: product-template
+    version: 0.0.1
+    backstage.io/kubernetes-id: product-template
+spec:
+  gateways:
+  - product-template-gw
+  hosts:
+  - product-template.sevira.cloud
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: product-template-service
+      weight: 100
