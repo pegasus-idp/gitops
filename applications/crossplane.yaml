@@ -12,9 +12,9 @@ spec:
     - repoURL: https://charts.crossplane.io/stable
       chart: crossplane
       targetRevision: v1.17.1
-    - repoURL: https://github.com/pegasus-idp/gitops
-      targetRevision: HEAD
-      path: deployed_apps/crossplane
+    # - repoURL: https://github.com/pegasus-idp/gitops
+    #   targetRevision: HEAD
+    #   path: deployed_apps/crossplane
   syncPolicy:
     automated:
       selfHeal: true
