@@ -5,7 +5,7 @@ metadata:
   namespace: go-app-04
 spec:
   selector:
-    istio: ingressgateway
+    istio: gateway
   servers:
     - hosts:
         - go-app-04.sevira.cloud
