@@ -4,9 +4,7 @@ metadata:
   name: aws
   namespace: crossplane-system
 spec:
+  assumeRoleWithWebIdentity:
+    roleARN: "arn:aws:iam::651644924182:role/crossplane-route53-access"
   credentials:
-    source: Secret
-    secretRef:
-      namespace: crossplane-system
-      name: aws-secret
-      key: creds
+    source: InjectedIdentity
