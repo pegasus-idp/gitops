@@ -8,7 +8,7 @@ spec:
     istio: gateway
   servers:
     - hosts:
-        - go-app-04.sevira.cloud
+        - go-app-04.gabportela.pro
       port:
         name: http
         number: 80
@@ -16,7 +16,7 @@ spec:
       tls:
         httpsRedirect: true
     - hosts:
-        - go-app-04.sevira.cloud
+        - go-app-04.gabportela.pro
       port:
         name: https-workloads
         number: 443
@@ -37,7 +37,7 @@ spec:
   gateways:
   - go-app-04-gw
   hosts:
-  - go-app-04.sevira.cloud
+  - go-app-04.gabportela.pro
   http:
   - name: primary
     route:
