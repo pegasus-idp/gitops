@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: go-app-01-gw
+  namespace: go-app-01
+spec:
+  selector:
+    istio: gateway
+  servers:
+    - hosts:
+        - go-app-01.gabportela.pro
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    - hosts:
+        - go-app-01.gabportela.pro
+      port:
+        name: https-workloads
+        number: 443
+        protocol: HTTP
+      tls:
+        mode: PASSTHROUGH
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: go-app-01-vs
+  namespace: go-app-01
+  labels:
+    app: go-app-01
+    version: 0.0.1
+    backstage.io/kubernetes-id: go-app-01
+spec:
+  gateways:
+  - go-app-01-gw
+  hosts:
+  - go-app-01.gabportela.pro
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: go-app-01-service
+      weight: 100
